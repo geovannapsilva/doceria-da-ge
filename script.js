@@ -256,7 +256,7 @@ function mostrarErroDetalhado(mensagem) {
                                 <li>• Abra o console do navegador (F12) para mais detalhes</li>
                             </ul>
                         </div>
-                        <button onclick="location.reload()" class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600">
+                        <button onclick="location.reload()" class="bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600">
                             Tentar novamente
                         </button>
                     </div>
@@ -525,25 +525,25 @@ function renderizarItens() {
                                 <h3 class="text-lg font-semibold text-gray-800">${item.nome}</h3>
                                 ${!itemDisponivel ? `
                                     <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">
-                                        Indisponível
+                                        disponível
                                     </span>
                                 ` : ''}
                             </div>
                             <p class="text-gray-600 text-sm mb-3">${item.descricao}</p>
                             <div class="flex justify-between items-center">
-                                <span class="text-2xl font-bold text-orange-600">
+                                <span class="text-2xl font-bold text-pink-600">
                                     ${precoFormatado}
                                 </span>
                                 <button
                                     id="btn-${item.id}"
                                     class="btn-pedido px-4 py-2 rounded-lg font-medium transition-all ${itemDisponivel
-                ? 'bg-orange-500 text-white hover:bg-orange-600'
+                ? 'bg-pink-500 text-white hover:bg-pink-600'
                 : 'bg-gray-300 text-gray-500 cursor-not-allowed'
             }"
                                     ${!itemDisponivel ? 'disabled' : ''}
                                     onclick="${itemDisponivel ? `adicionarAoCarrinhoComVerificacao('${item.id}', '${item.nome.replace(/'/g, "\\'")}', ${preco})` : ''}"
                                 >
-                                    ${itemDisponivel ? '🛒 Adicionar' : 'Indisponível'}
+                                    ${itemDisponivel ? '🛒 Adicionar' : 'disponível'}
                                 </button>
                             </div>
                         </div>
@@ -591,7 +591,7 @@ function desabilitarBotoesAdicionar() {
     botoes.forEach(botao => {
         if (!botao.disabled) {
             botao.disabled = true;
-            botao.classList.remove('bg-orange-500', 'hover:bg-orange-600');
+            botao.classList.remove('bg-pink-500', 'hover:bg-pink-600');
             botao.classList.add('bg-gray-300', 'text-gray-500', 'cursor-not-allowed');
             botao.textContent = '🔴 Fechado';
         }
@@ -608,7 +608,7 @@ function habilitarBotoesAdicionar() {
         if (item && (item.disponivel === 'TRUE' || item.disponivel === true || item.disponivel === 'true')) {
             botao.disabled = false;
             botao.classList.remove('bg-gray-300', 'text-gray-500', 'cursor-not-allowed');
-            botao.classList.add('bg-orange-500', 'text-white', 'hover:bg-orange-600');
+            botao.classList.add('bg-pink-500', 'text-white', 'hover:bg-pink-600');
             botao.textContent = '🛒 Adicionar';
         }
     });
