@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardápio Digital</title>
+    <title>Livraria Digital</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -13,7 +13,7 @@
         <div id="loading" class="min-h-screen bg-gray-50 flex items-center justify-center">
             <div class="text-center">
                 <div class="loading-spinner mx-auto mb-4"></div>
-                <h2 class="text-xl font-semibold text-gray-700">Carregando cardápio...</h2>
+                <h2 class="text-xl font-semibold text-gray-700">Carregando...</h2>
                 <p class="text-gray-500 mt-2">Aguarde um momento</p>
             </div>
         </div>
@@ -114,7 +114,7 @@
             <!-- Modal do Carrinho -->
             <div id="modalCarrinho" class="fixed inset-0 z-40 hidden">
                 <!-- Overlay -->
-                <div class="modal-overlay absolute inset-0 bg-black bg-opacity-50" onclick="fecharModalCarrinho()"></div>
+                <div class="modal-overlay absolute inset-0 bg-black bg-opacity-50" onclick="fecharModalSacola()"></div>
                 
                 <!-- Conteúdo do Modal -->
                 <div class="modal-content absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-2xl max-h-[80vh] overflow-hidden">
@@ -122,10 +122,10 @@
                     <div class="bg-gradient-to-r from-green-500 to-green-600 text-white p-4">
                         <div class="flex items-center justify-between">
                             <h3 class="text-lg font-bold flex items-center gap-2">
-                                🛒 Seu Pedido
+                                🛍️ Seu Pedido
                                 <span id="quantidadeItensModal" class="bg-white bg-opacity-20 px-2 py-1 rounded-full text-sm">0 itens</span>
                             </h3>
-                            <button onclick="fecharModalCarrinho()" class="text-white hover:text-gray-200 text-2xl">
+                            <button onclick="fecharModalSacola()" class="text-white hover:text-gray-200 text-2xl">
                                 ×
                             </button>
                         </div>
@@ -133,15 +133,15 @@
                     
                     <!-- Lista de Itens -->
                     <div class="overflow-y-auto max-h-96 p-4">
-                        <div id="itensCarrinhoModal" class="space-y-3">
+                        <div id="itensSacolaModal" class="space-y-3">
                             <!-- Itens serão inseridos aqui -->
                         </div>
                         
                         <!-- Estado vazio -->
-                        <div id="carrinhoVazio" class="text-center py-8 text-gray-500 hidden">
-                            <div class="text-4xl mb-2">🛒</div>
-                            <p>Seu carrinho está vazio</p>
-                            <p class="text-sm mt-1">Adicione alguns itens deliciosos!</p>
+                        <div id="SacolaVazio" class="text-center py-8 text-gray-500 hidden">
+                            <div class="text-4xl mb-2">🛍️</div>
+                            <p>Sua sacola está vazio</p>
+                            <p class="text-sm mt-1">Adicione alguns itens!</p>
                         </div>
                     </div>
                     
@@ -149,13 +149,13 @@
                     <div id="footerModal" class="border-t border-gray-200 p-4 bg-gray-50">
                         <div class="flex justify-between items-center mb-3">
                             <span class="text-lg font-bold text-gray-800">Total:</span>
-                            <span id="totalCarrinhoModal" class="text-2xl font-bold text-green-600">R$ 0,00</span>
+                            <span id="totalSacolaModal" class="text-2xl font-bold text-green-600">R$ 0,00</span>
                         </div>
                         <div class="space-y-3">
                             <!-- Botões principais -->
                             <div class="flex gap-3">
                                 <button 
-                                    onclick="limparCarrinho()" 
+                                    onclick="limparSacola()" 
                                     class="flex-1 bg-red-500 text-white py-3 rounded-lg font-medium hover:bg-red-600 transition-colors"
                                 >
                                     🗑️ Limpar
@@ -164,7 +164,7 @@
                                     onclick="abrirModalEntrega()" 
                                     class="flex-2 bg-gradient-to-r from-green-500 to-green-600 text-white py-3 px-6 rounded-lg font-medium hover:from-green-600 hover:to-green-700 transition-all"
                                 >
-                                    📱 Finalizar Pedido
+                                    📱 Finalizar Pedido 💕
                                 </button>
                             </div>
                             
@@ -435,8 +435,8 @@
                         <div id="listaItens" class="space-y-4"></div>
                     </div>
                     <div class="mt-12 text-center text-gray-500 text-sm">
-                        <p>💚 Feito com carinho para nossos clientes</p>
-                        <p class="mt-2">Para alterar este cardápio, edite a planilha Google Sheets</p>
+                        <p>🩷 Com carinho para nossos clientes</p>
+                        <p class="mt-2"></p>
                     </div>
                 </div>
             </main>
