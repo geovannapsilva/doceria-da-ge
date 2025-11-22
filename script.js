@@ -20,7 +20,7 @@ let itens = [];
 let categoriasComItens = [];
 let categoriaAtiva = 1;
 let carregando = true;
-let carrinho = [];
+let sacola = [];
 let numeroMesa = null;
 let tipoPedidoAtual = 'entrega';
 let formaPagamentoAtual = null;
@@ -1339,3 +1339,4 @@ iniciarControleMobileHeader();
 
 // Esconder barra de endereço quando carregado
 window.addEventListener('load', esconderBarraEndereco);
+
